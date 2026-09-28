@@ -14,7 +14,15 @@ cd store-inventory-system
 composer install
 copy .env.example .env
 php artisan key:generate
+
 # Configure your database credentials (DB_DATABASE, DB_USERNAME, DB_PASSWORD) in .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=store_order
+DB_USERNAME=root
+DB_PASSWORD=
+
 php artisan migrate:fresh --seed
 php artisan queue:work      
 php artisan serve
